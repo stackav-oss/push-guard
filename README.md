@@ -7,16 +7,34 @@ PushGuard is not designed or intended to be a tool that would prevent bad actors
 
 Please reach out and open an issue with any questions, concerns, or bugs surrounding the tooling.
 
+# Configuration
+Use the build.json to configure the push-guard binary
+```json
+{
+    "PushGuardVersion": "TBD",
+    "Disclaimer": "TBD",
+    "LogCollectorURL": "TBD",
+    "ProtectedBranches": "TBD",
+    "ProtocolAndDomainAllowList": "TBD",
+    "DirectoryAllowList": "TBD",
+    "DirectoryRegexAllowList": "TBD"
+}
+```
 # Build Binary
 Use the local os and arch by default
-```
+```shell
 make build
 ```
 Or you could specify the os and arch
-```
-make build os=<OS> arch=<ARCH>
+```shell
+make build os="${OS}" arch="${ARCH}"
 ```
 # Clean Workspace
-```
+```shell
 make clean
+```
+# Show Version
+```shell
+push-guard --push-guard-version
+# 0.0.1 
 ```
