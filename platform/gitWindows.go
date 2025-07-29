@@ -1,3 +1,5 @@
+// Copyright 2025 Stack AV Co.
+// SPDX-License-Identifier: Apache-2.0
 //go:build windows
 
 package platform
@@ -5,8 +7,9 @@ package platform
 import (
 	"os"
 	"os/exec"
-	"syscall"
 	"push-guard/utils"
+	"syscall"
+
 	"golang.org/x/sys/windows"
 )
 
