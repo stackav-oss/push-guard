@@ -4,14 +4,14 @@ package platform
 
 import (
 	"os"
-	"syscall"
 	"push-guard/utils"
+	"syscall"
 )
 
 func ExecuteGit(gitBinaryPath string) {
 	utils.Logger.Debug("ExecuteGit", "gitBinaryPath", gitBinaryPath, "Args", os.Args)
 	execErr := syscall.Exec(gitBinaryPath, os.Args, os.Environ())
-		if execErr != nil {
-			panic(execErr)
-		}
+	if execErr != nil {
+		panic(execErr)
+	}
 }

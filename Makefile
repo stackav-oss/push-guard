@@ -1,3 +1,5 @@
+# Copyright 2025 Stack AV Co.
+# SPDX-License-Identifier: Apache-2.0
 SHELL=/bin/bash
 
 version = $(shell jq -j '.PushGuardVersion' < ./build.json)
@@ -31,3 +33,4 @@ build:
 
 clean:
 	@[[ -d build ]] && { echo "Cleaning build ..."; rm -rf build; } || echo "build not found"
+	@[[ -f go.sum ]] && { echo "Cleaning go.sum ..."; rm -f go.sum; } || echo "go.sum not found"
