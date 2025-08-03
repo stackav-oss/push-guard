@@ -1,0 +1,9 @@
+{
+    "PushGuardVersion": "0.0.1",
+    "Disclaimer": "⚠️ Warning: pushing company source code to public repositories without proper authorization is strictly against <COMPANY>'s policy.\nPlease ensure that all code sharing complies with <COMPANY>'s policy in order to maintain the confidentiality and security of our source code.",
+    "LogCollectorURL": "TBD",
+    "ProtectedBranches": "main,master",
+    "ProtocolAndDomainAllowList": "github.com:,git@github.com:,https://github.com/,ssh://git@github.com/",
+    "DirectoryAllowList": "<COMPANY>/",
+    "DirectoryRegexAllowList": ""
+}
