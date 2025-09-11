@@ -1,2 +1,4 @@
 build/
 go.sum
+junit.xml
+
