@@ -34,3 +34,14 @@ build:
 clean:
 	@[[ -d build ]] && { echo "Cleaning build ..."; rm -rf build; } || echo "build not found"
 	@[[ -f go.sum ]] && { echo "Cleaning go.sum ..."; rm -f go.sum; } || echo "go.sum not found"
+	@[[ -f junit.xml ]] && { echo "Cleaning junit.xml ..."; rm -f junit.xml; } || echo "junit.xml not found"
+
+
+test:
+	@echo "Installing gotestsum ..."
+	@go install gotest.tools/gotestsum@latest
+	@echo "Installing dependencies ..."
+	@go get -C . .
+	@echo "Generating test report ..."
+	@gotestsum --junitfile junit.xml --format testname
+
