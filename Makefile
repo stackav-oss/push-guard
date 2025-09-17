@@ -27,8 +27,13 @@ build:
 	@echo "Building ${version}/${os}/${arch} ..."
 	@echo "Installing dependencies ..."
 	@go get -C . .
-	@echo "Building binary: \"${binary_path}\""
-	@env GOOS="${os}" GOARCH="${arch}" go build -C . -o "${binary_path}" -ldflags "${ldflags}"
+	@if [[ "${os}" = "windows" ]]; then \
+	    echo "Building binary: \"${binary_path}.exe\""; \
+	    env GOOS="${os}" GOARCH="${arch}" go build -C . -o "${binary_path}.exe" -ldflags "${ldflags}"; \
+	else \
+	    echo "Building binary: \"${binary_path}\""; \
+	    env GOOS="${os}" GOARCH="${arch}" go build -C . -o "${binary_path}" -ldflags "${ldflags}"; \
+	fi
 
 
 clean:
