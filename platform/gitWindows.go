@@ -17,7 +17,7 @@ func ExecuteGit(gitBinaryPath string) {
 	var cmdArgs []string
 
 	if len(os.Args) > 1 {
-		cmdArgs = os.Args[2:]
+		cmdArgs = os.Args[1:]
 	}
 
 	cmd := exec.Command(gitBinaryPath, cmdArgs...)
